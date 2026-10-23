@@ -14,6 +14,11 @@ export default function App() {
   const [count, setCount] = useState(1);
   const [value, setValue] = useState('Option 1');
 
+  const handleOptionClick = () => {
+          setCount((c) => c + 1);
+          setValue(`Option ${count}`);
+        }
+
   return (
     <>
       <h1>{greeting(__APP_NAME__)}</h1>
@@ -33,10 +38,7 @@ export default function App() {
           aliquam. 
           Quisque rhoncus elementum sodales. Fusce placerat eros ut gravida rhoncus. Fusce pharetra, leo vitae dapibus faucibus, 
           dolor nisl placerat elit, eget dignissim odio tortor in dolor.</p>
-        <button type="button" onClick={() => {
-          setCount((c) => c + 1);
-          setValue(`Option ${count}`);
-        }}>
+        <button type="button" onClick={handleOptionClick}>
           Option <span>{count}</span> is selected
         </button>
       </div>
