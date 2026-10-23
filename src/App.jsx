@@ -11,12 +11,14 @@ const OPTIONS = [
 ];
 
 export default function App() {
-  const [count, setCount] = useState(1);
   const [value, setValue] = useState('Option 1');
 
+  const selectedNumber = Number(value.replace('Option ', ''));
+
   const handleOptionClick = () => {
-          setCount((c) => c + 1);
-          setValue(`Option ${count}`);
+          const currentIndex = OPTIONS.indexOf(value);
+          const nextIndex = (currentIndex + 1) % OPTIONS.length;
+          setValue(OPTIONS[nextIndex]);
         }
 
   return (
@@ -39,7 +41,7 @@ export default function App() {
           Quisque rhoncus elementum sodales. Fusce placerat eros ut gravida rhoncus. Fusce pharetra, leo vitae dapibus faucibus, 
           dolor nisl placerat elit, eget dignissim odio tortor in dolor.</p>
         <button type="button" onClick={handleOptionClick}>
-          Option <span>{count}</span> is selected
+          Option <span>{selectedNumber}</span> is selected
         </button>
       </div>
     </>
