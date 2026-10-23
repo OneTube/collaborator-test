@@ -86,6 +86,7 @@ button:focus-visible {
 
 .dropdown-menu {
   position: absolute;
+  z-index: 1;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -95,12 +96,15 @@ button:focus-visible {
   background: #1e3a5f;
   border: 2px solid currentColor;
   border-radius: 6px;
+  max-height: 110px;
+  overflow-y: auto;
 }
 
 .dropdown-menu.up {
   top: auto;
   bottom: 100%;
   margin: 0 0 4px;
+  max-height: 70px;
 }
 
 .dropdown-menu li {
@@ -110,4 +114,12 @@ button:focus-visible {
 
 .dropdown-menu li:hover {
   background: rgba(255, 212, 59, 0.2);
+}
+
+.card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
