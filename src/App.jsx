@@ -13,7 +13,7 @@ const OPTIONS = [
 export default function App() {
   const [value, setValue] = useState('Option 1');
 
-  const selectedNumber = Number(value.replace('Option ', ''));
+  const selectedNumber = OPTIONS.indexOf(value) + 1;
 
   const handleOptionClick = () => {
           const currentIndex = OPTIONS.indexOf(value);
