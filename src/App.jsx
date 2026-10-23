@@ -2,6 +2,14 @@ import { useState } from 'react';
 import { greeting } from './greeting';
 import Dropdown from './Dropdown';
 
+const OPTIONS = [
+  'Option 1',
+  'Option 2',
+  'Option 3',
+  'Option 4',
+  'Option 5',
+];
+
 export default function App() {
   const [count, setCount] = useState(1);
   const [value, setValue] = useState('Option 1');
@@ -12,7 +20,7 @@ export default function App() {
       <div className="card">
         <h2>Card</h2>
         <Dropdown
-          options={['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5']}
+          options={OPTIONS}
           value={value}
           onChange={setValue}
         />
